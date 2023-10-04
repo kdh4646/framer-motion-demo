@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
+
+//frame-motion for better animation
+import { motion } from "framer-motion";
 
 function App() {
   const [x, setX] = useState(0);
@@ -7,8 +10,14 @@ function App() {
 
   return (
     <div id="demo">
-      <div id="box" />
-
+      <motion.div
+        id="box"
+        animate={{ x, y, rotate }}
+        transition={{
+          duration: 0.3,
+          type: "spring",
+        }}
+      />
       <div id="inputs">
         <p>
           <label htmlFor="x">X</label>
